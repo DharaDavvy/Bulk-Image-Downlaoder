@@ -1,0 +1,103 @@
+/* ==========================================================
+   Bulk Image Downloader — Content Script Styles
+   Overlay button styles, scoped with __bid- prefix
+   ========================================================== */
+
+/* Wrapper around each image */
+.__bid-wrapper {
+  position: relative !important;
+  overflow: visible !important;
+  line-height: 0;
+}
+
+/* The Add / Added button */
+.__bid-btn {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 14px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.15s ease !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+}
+
+/* Show button on hover over the wrapper */
+.__bid-wrapper:hover .__bid-btn {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.__bid-btn:hover {
+  background-color: #1d4ed8 !important;
+  transform: scale(1.05) !important;
+}
+
+.__bid-btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Added state */
+.__bid-btn--added {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.__bid-btn--added:hover {
+  background-color: #dc2626 !important;
+}
+
+/* Label span defaults — "Remove" label is hidden by default */
+.__bid-btn-label--remove {
+  display: none !important;
+}
+
+/* When hovering over wrapper with an Added button, swap label text */
+.__bid-wrapper:hover .__bid-btn--added .___bid-btn-label,
+.__bid-wrapper:hover .__bid-btn--added .__bid-btn-label {
+  display: none !important;
+}
+.__bid-wrapper:hover .__bid-btn--added .__bid-btn-label--remove {
+  display: inline !important;
+}
+
+/* Subtle always-visible indicator when image is selected */
+.__bid-wrapper:has(.__bid-btn--added)::after {
+  content: "✓" !important;
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  width: 22px !important;
+  height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #16a34a !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  pointer-events: none !important;
+  z-index: 2147483646 !important;
+  opacity: 1 !important;
+}
+
+/* Hide the checkmark dot when hovering (full button is visible instead) */
+.__bid-wrapper:hover::after {
+  opacity: 0 !important;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=360" />
+  <title>Bulk Image Downloader</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1 class="header__title">Bulk Image Downloader</h1>
+    <p class="header__count" id="count">0 images selected</p>
+  </header>
+
+  <!-- Image list -->
+  <main class="list" id="list">
+    <!-- Populated by popup.js -->
+  </main>
+
+  <!-- Empty state -->
+  <div class="empty" id="empty">
+    <p class="empty__icon">📷</p>
+    <p class="empty__text">No images selected yet.</p>
+    <p class="empty__hint">Hover over images on the page and click <strong>+ Add</strong> to start collecting.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="progress" id="progress">
+      <div class="progress__bar" id="progressBar"></div>
+      <span class="progress__text" id="progressText"></span>
+    </div>
+    <div class="footer__buttons">
+      <button class="btn btn--clear" id="clearBtn">Clear All</button>
+      <button class="btn btn--download" id="downloadBtn">
+        Download All (<span id="dlCount">0</span>)
+      </button>
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
